@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus6Oxygen/OnePlus6Oxygen_22.J.48_GLO_048_2010042239/OnePlus6Oxygen_22.J.48_OTA_048_all_2010042239_c0c1fee2ee.zip
+  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus6TOxygen/OnePlus6TOxygen_34.J.50_GLO_050_2101210546/OnePlus6TOxygen_34.J.50_OTA_050_all_2101210546_ee562c52ade.zip
   ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
@@ -51,7 +51,7 @@ jobs:
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME -a
        
        - name: Zip GSI  
          run: |
@@ -61,7 +61,7 @@ jobs:
        - name: Upload GSI to BitSend
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit final/GSI.zip
+              ./transfer wet final/GSI.zip
 
          
             
